@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction Notes &mdash; disc 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="disc 0.1 documentation" href="index.html" />
+    <link rel="next" title="Software Installation and Setup" href="installation.html" />
+    <link rel="prev" title="Welcome to the DISC system documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Software Installation and Setup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the DISC system documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction-notes">
+<h1>Introduction Notes<a class="headerlink" href="#introduction-notes" title="Permalink to this headline">¶</a></h1>
+<p>DISC is an acronym for Distributed Intelligent Sense and Control.  There are centralized elements of the system with more computing power that handle complex functionality but also distributed elements that handle more simple functions.  A goal is to make sure most of the system can be remotely managed.  Another goal is to make sure that critical control and data logging functions operate when temporarily disconnected from the network.  Another goal is to keep the system very reliable and the cost low.</p>
+<div class="section" id="time-series-data">
+<h2>Time Series Data<a class="headerlink" href="#time-series-data" title="Permalink to this headline">¶</a></h2>
+<p>The DISC Server is centered around timeseries data that is pre-filtered so that it can quickly and easily be analyzed and used to make decisions.  The server can handle many channels of data even with a low cost computer such as the raspberry pi or beaglebone.  The server must filter and store the data as well as retrieve it to drive actions and alerts.  Fifty data channels recorded at 1 point per minute will be 72000 points per day.  That many data points can be costly to store in the cloud.  Performing statistical operations every few minutes on that data is even more costly to perform in the cloud.  If you need high performance, just install the DISC Server on an old computer (faster than a raspberry pi) and use the raspberry pi as a remote data logger so that you don&#8217;t loose any data when you reboot the server.</p>
+</div>
+<div class="section" id="metric-chimes">
+<h2>Metric Chimes<a class="headerlink" href="#metric-chimes" title="Permalink to this headline">¶</a></h2>
+<p>This is a fun use of the DISC system.  An hourly chime is nice, so why not keep track of your environment on the hour?  Use the action lab to create statistics about your environment and have them sent as an SMS.  This is very neat with a smartwatch.  Here are some suggestions:
+*       At 9am be notified about how much hot water was used for the morning shower(s)
+*       At 10am be notified about how well you rested
+*       At 11am be notified about when you turned off the light in your room last night
+*       At noon be notified when the sunrise light level was bright enough to easily read a book
+*       At 5pm be notified about how much activity there was in the office during the last 9 hours
+*       At 8pm be notified of the electricity cost for the last 24 hours
+*       At 9pm be notified of the average temperature/humidity/windspeed for the day</p>
+</div>
+<div class="section" id="considerations">
+<h2>Considerations<a class="headerlink" href="#considerations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The present version of this documentation expects that the user has some advanced computer skills.</li>
+<li>The user should be able to install python and python packages.</li>
+<li>The user will have to use the command line and possibly modify commands in this documentation to suit the configuration of their computer.</li>
+<li>Building a samewire network will require basic electronics skills.</li>
+<li>If you find a bug or want a feature, dive in and add it yourself for the good of all.  If that doesn&#8217;t work for you, then encourage the developers as they improve it for you.  Be thankful for the work in progress!</li>
+</ul>
+</div>
+<div class="section" id="for-developers">
+<h2>For developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">¶</a></h2>
+<p>A goal for the DISC System is to provide a few core apps that can be used by plug-in apps.  Hard links are convenient during early development but create complex dependencies as the system grows.  Efforts have been made to identify core functionality and provide for soft links between other apps.</p>
+</div>
+</div>
+<div class="section" id="what-can-i-do-with-the-disc-system">
+<h1>What can I do with the DISC system?<a class="headerlink" href="#what-can-i-do-with-the-disc-system" title="Permalink to this headline">¶</a></h1>
+<p>The author has only listed things that he has done with the system.  Your needs may find new purpose for these tools.  The author hopes that some may use their skills to develop completely new features for the system whether it be hardware or software.</p>
+<div class="section" id="log-data-from-an-html-table">
+<h2>Log data from an HTML Table<a class="headerlink" href="#log-data-from-an-html-table" title="Permalink to this headline">¶</a></h2>
+<p>Data can be collected from any html table for which the table and cell indexes do not change in the page.</p>
+<p>A good example is logging National Weather Service Forecast data.  The author records the 3,6 and 12hr forecast data.  He configures the system to send alerts such as:
+*       when the windows should be open or closed for best efficiency in cooling
+*       when there might be frost
+*       when cold temperatures and high winds might freeze pipes</p>
+<p>You might record data from other measurement systems that present their data in a webpage with an html table.  Maybe you don&#8217;t have logging and graphing capability on the other system or you want to combine data from both systems in order to create more intelligent alerts.  You might want to control functions connected to the DISC System with input data collected from another measurement system.</p>
+</div>
+<div class="section" id="action-lab">
+<h2>Action Lab<a class="headerlink" href="#action-lab" title="Permalink to this headline">¶</a></h2>
+<p>Write python scripts that analyze your data and decide when to perform actions or notify you when certain conditions occur.  There are examples as well as convenience functions written for getting data and sending emails, etc.  The server does not need to be restarted when changing an action lab script.  The server checks for a new time stamp and automatically reloads the script.  The script can even be edited remotely in a web browser.</p>
+</div>
+<div class="section" id="operate-a-samewire-network">
+<h2>Operate a Samewire network<a class="headerlink" href="#operate-a-samewire-network" title="Permalink to this headline">¶</a></h2>
+<p>This is a two wire network.  One wire is ground and the other carries power and communication.  The distribution is point to multi-point.  A network has one master and one or more serfs.  Each serf has an address so that it only responds to commands intended for it.  The master and serfs can be configured with a serial terminal or (using the DISC system) through a web browser.  Linear calibration values can be written to the serf so that calibration stays with the hardware.  The serf firmware has adjustable filters to help reduce sensor noise.  The serf firmware can be a completely local control system.  Sensor inputs can control digital outputs with configurable thresholds and hysteresis.</p>
+<div class="section" id="measure">
+<h3>Measure<a class="headerlink" href="#measure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Analog (Temperature, Humidity, Battery Voltage, Pressure Sensor)</li>
+<li>Digital (PIR Motion, Switch State)</li>
+<li>Capacitance (Light Level, Humidity)</li>
+<li>Timing (Wind Speed, Blood Pressure Pulse Sensor)</li>
+<li>AC Power Monitor (AC Voltage, AC Current)</li>
+</ul>
+</div>
+<div class="section" id="control">
+<h3>Control<a class="headerlink" href="#control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>LED Indicator</li>
+<li>Digital Outputs</li>
+</ul>
+</div>
+<div class="section" id="filter-inputs">
+<h3>Filter Inputs<a class="headerlink" href="#filter-inputs" title="Permalink to this headline">¶</a></h3>
+<p>Filter input data with a moving average</p>
+</div>
+<div class="section" id="use-thresholds-with-hysteresis-for-analog-inputs-to-drive-digital-outputs">
+<h3>Use thresholds (with hysteresis) for analog inputs to drive digital outputs<a class="headerlink" href="#use-thresholds-with-hysteresis-for-analog-inputs-to-drive-digital-outputs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Link an output to be controlled by an input</li>
+<li>Define how the output is controlled by the input</li>
+<li>Set thresholds for the output to be changed by the input</li>
+<li>Use hysteresis with the thresholds</li>
+<li>Set the frequency that the output value is updated</li>
+</ul>
+</div>
+</div>
+<div class="section" id="monitor-and-control-a-thermostat-that-has-serial-port-programming-access-such-as-rcs-tr-40">
+<h2>Monitor and Control a Thermostat that has serial port programming access (such as RCS TR 40)<a class="headerlink" href="#monitor-and-control-a-thermostat-that-has-serial-port-programming-access-such-as-rcs-tr-40" title="Permalink to this headline">¶</a></h2>
+<p>This system was designed using the RCS TR 40 Thermostat but could be adapted to other thermostats that are programmable through a serial interface.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction Notes</a><ul>
+<li><a class="reference internal" href="#time-series-data">Time Series Data</a></li>
+<li><a class="reference internal" href="#metric-chimes">Metric Chimes</a></li>
+<li><a class="reference internal" href="#considerations">Considerations</a></li>
+<li><a class="reference internal" href="#for-developers">For developers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-can-i-do-with-the-disc-system">What can I do with the DISC system?</a><ul>
+<li><a class="reference internal" href="#log-data-from-an-html-table">Log data from an HTML Table</a></li>
+<li><a class="reference internal" href="#action-lab">Action Lab</a></li>
+<li><a class="reference internal" href="#operate-a-samewire-network">Operate a Samewire network</a><ul>
+<li><a class="reference internal" href="#measure">Measure</a></li>
+<li><a class="reference internal" href="#control">Control</a></li>
+<li><a class="reference internal" href="#filter-inputs">Filter Inputs</a></li>
+<li><a class="reference internal" href="#use-thresholds-with-hysteresis-for-analog-inputs-to-drive-digital-outputs">Use thresholds (with hysteresis) for analog inputs to drive digital outputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#monitor-and-control-a-thermostat-that-has-serial-port-programming-access-such-as-rcs-tr-40">Monitor and Control a Thermostat that has serial port programming access (such as RCS TR 40)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to the DISC system documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Software Installation and Setup</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/intro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Software Installation and Setup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the DISC system documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Nathan A Wehr.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

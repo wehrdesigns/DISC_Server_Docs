@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Running the demo &mdash; disc 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="disc 0.1 documentation" href="index.html" />
+    <link rel="next" title="Overview and the Env app" href="tutorial.html" />
+    <link rel="prev" title="Software Installation and Setup" href="installation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Overview and the Env app"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Software Installation and Setup"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="running-the-demo">
+<h1>Running the demo<a class="headerlink" href="#running-the-demo" title="Permalink to this headline">¶</a></h1>
+<p>The DISC Server that you download from Github will be setup to easily run a demo.</p>
+<div class="section" id="start-the-disc-server">
+<h2>Start the DISC Server<a class="headerlink" href="#start-the-disc-server" title="Permalink to this headline">¶</a></h2>
+<p>Open a new terminal.
+<em>Change to the folder disc and run:</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>python runserver.py &amp;
+</pre></div>
+</div>
+<p>The server is configured to run on port 8000, which can be changed in the file:
+disc/user/config.json
+The parameter is: HTTP_PORT</p>
+</div>
+<div class="section" id="start-the-controller">
+<h2>Start the Controller<a class="headerlink" href="#start-the-controller" title="Permalink to this headline">¶</a></h2>
+<p>Open a new terminal.
+<em>Change to the folder disc/controller and run:</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>python controller.py &amp;
+</pre></div>
+</div>
+<p>The controller also has a web server and is configured to run on port 11111
+Settings for the controller are in the file disc/controller/settings.py</p>
+</div>
+<div class="section" id="login-to-the-disc-server">
+<h2>Login to the DISC Server<a class="headerlink" href="#login-to-the-disc-server" title="Permalink to this headline">¶</a></h2>
+<p>Login with user &#8216;admin&#8217; and password &#8216;admin&#8217;
+If the web browser is running on the same computer as the server use the link:
+&lt;<a class="reference external" href="http://localhost:8000/disc/admin">http://localhost:8000/disc/admin</a>&gt;</p>
+<p>The admin account has super user priviledges so be careful which links you click on.
+If you prefer to explore with less power, log in with user &#8216;guest&#8217; and password &#8216;guest&#8217;.</p>
+<p>Look at the tutorial for more info about how the demo was configured.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Running the demo</a><ul>
+<li><a class="reference internal" href="#start-the-disc-server">Start the DISC Server</a></li>
+<li><a class="reference internal" href="#start-the-controller">Start the Controller</a></li>
+<li><a class="reference internal" href="#login-to-the-disc-server">Login to the DISC Server</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Software Installation and Setup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="next chapter">Overview and the Env app</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/demo.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Overview and the Env app"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Software Installation and Setup"
+             >previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Nathan A Wehr.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

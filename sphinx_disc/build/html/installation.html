@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Software Installation and Setup &mdash; disc 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="disc 0.1 documentation" href="index.html" />
+    <link rel="next" title="Running the demo" href="demo.html" />
+    <link rel="prev" title="Introduction Notes" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Running the demo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction Notes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="software-installation-and-setup">
+<h1>Software Installation and Setup<a class="headerlink" href="#software-installation-and-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites-a-list-of-the-required-software-and-versions-that-have-been-tested">
+<h2>Prerequisites - a list of the required software and versions that have been tested.<a class="headerlink" href="#prerequisites-a-list-of-the-required-software-and-versions-that-have-been-tested" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p><em>(Other versions may work, but have not been tried.)</em></p>
+<p>Ask Google how to best install this software on your system.
+Pip is a good python tool to install packages.
+If you already have other versions installed, consider using a python virtual environment (linux only).</p>
+<ul class="simple">
+<li>Python      2.7.6</li>
+<li>Django      1.7</li>
+<li>Tornado     3.1</li>
+<li>Numpy       1.6.2</li>
+<li>Matplotlib  1.1.1</li>
+<li>pySerial    2.5</li>
+</ul>
+</div>
+<div class="section" id="check-the-installation">
+<h3>Check the installation<a class="headerlink" href="#check-the-installation" title="Permalink to this headline">¶</a></h3>
+<p><em>Run python in a terminal</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">python</span>
+</pre></div>
+</div>
+<p><em>Then type or copy/paste (one line at a time) the following into the terminal to see if each item is installed and which version is installed</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">version</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="kn">import</span> <span class="nn">django</span>
+<span class="n">django</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span>
+<span class="kn">import</span> <span class="nn">tornado</span>
+<span class="n">tornado</span><span class="o">.</span><span class="n">version_info</span>
+<span class="kn">import</span> <span class="nn">serial</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">VERSION</span>
+</pre></div>
+</div>
+<p><em>To exit python type</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="disc-server">
+<h2>DISC Server<a class="headerlink" href="#disc-server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>Download the software from github</p>
+</div>
+<div class="section" id="id1">
+<h3>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The software can be located on the local drive or a usb flash drive or a network drive</p>
+</div>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>The software is preconfigured with a simple demo.  You can run the demo to get familiar with the system or you can skip ahead to create a custom configuration.</p>
+<div class="section" id="custom-configuration">
+<h4>Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permalink to this headline">¶</a></h4>
+<p>The core django app in the disc server is the &#8216;env&#8217; app.  In order to build a new database for the env app, follow the directions in the django online tutorial.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Software Installation and Setup</a><ul>
+<li><a class="reference internal" href="#prerequisites-a-list-of-the-required-software-and-versions-that-have-been-tested">Prerequisites - a list of the required software and versions that have been tested.</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#check-the-installation">Check the installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#disc-server">DISC Server</a><ul>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#id1">Installation</a></li>
+<li><a class="reference internal" href="#setup">Setup</a><ul>
+<li><a class="reference internal" href="#custom-configuration">Custom Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">Introduction Notes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="demo.html"
+                        title="next chapter">Running the demo</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Running the demo"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction Notes"
+             >previous</a> |</li>
+        <li><a href="index.html">disc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Nathan A Wehr.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
